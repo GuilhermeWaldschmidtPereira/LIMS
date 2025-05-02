@@ -12,3 +12,5 @@ $(TARGET): $(OBJECTS)
 .PHONY: clean
 clean:
 	rm -rf $(OBJECTS)
+
+CXXFLAGS = -std=c++17 -Wall -g

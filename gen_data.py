@@ -24,7 +24,7 @@ def gen_imagedata():
     for k in range(1,11):
 
         # change filepath to your image file folder
-        X = load_databatch("E:\\dataset_LIMS\\Imagenet32_train", k)
+        X = load_databatch("dataset_LIMS", k)
         lenth = len(X[0])
         for i in range(len(X)):
             hist, bins = np.histogram(X[i], bins=32)
@@ -39,13 +39,13 @@ def gen_imagedata():
     print(X_scaled.shape)
 
     # change output file path to your path
-    np.savetxt('E:\\dataset_LIMS\\Imagenet32_train\\color_32.txt',X_scaled,fmt="%.5f",delimiter=',', newline='\n', header='', footer='')
-    np.save('E:\\dataset_LIMS\\Imagenet32_train\\color_32.npy',X_scaled)
+    np.savetxt('dataset_LIMS/color_32.txt',X_scaled,fmt="%.5f",delimiter=',', newline='\n', header='', footer='')
+    np.save('dataset_LIMS/color_32.npy',X_scaled)
 
 
 def gen_forestdata():
     # change input file path to your forest cover type data storage path
-    df = pd.read_csv("E:\\dataset_LISHD\\forest\\test.csv", error_bad_lines=False)
+    df = pd.read_csv("dataset_LISHD/forest/train.csv", on_bad_lines='skip')
     print(df.head())
     print(df.shape)
     print(df.isna().sum())
@@ -88,8 +88,8 @@ def gen_forestdata():
         data[:, i] = data[:, i] + noise[:, 0]
 
     # change output file path to your path
-    np.savetxt('E:\\dataset_LISHD\\forest\\forest.txt',data,fmt="%.8f",delimiter=',', newline='\n', header='', footer='')
-    np.save('E:\\dataset_LISHD\\forest\\forest.npy',data)
+    np.savetxt('dataset_LISHD/forest/forest.txt',data,fmt="%.8f",delimiter=',', newline='\n', header='', footer='')
+    np.save('dataset_LISHD/forest/forest.npy',data)
 
 if __name__ == '__main__':
     gen_imagedata()

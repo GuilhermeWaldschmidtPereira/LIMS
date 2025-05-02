@@ -1,0 +1,19 @@
+# Ignorar arquivos gerados na pasta outputFiles
+outputFiles/*
+!outputFiles/.gitkeep  # (caso queira manter a pasta no repositório)
+
+# Ignorar todos os arquivos de batches
+train_data_batch_*
+
+# Ignorar arquivos de datasets
+dataset_LIMS/
+dataset_LISHD/
+
+# Ignorar arquivos auxiliares de cor
+color_32.*
+
+# Ignorar arquivos .npy (numpy)
+*.npy
+
+# Ignorar arquivos .txt de dados (se forem gerados automaticamente)
+*.txt

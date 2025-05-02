@@ -65,8 +65,8 @@ void readm(int p){ //re-read the file
 	ifstream ain1;
 	cout<<"Pnum : 5";
 	//cin>>pnum;
-	string filename = "/home/qrstu/yty/dataset/word/fft_clu/word_" + to_string(p) + ".txt";
-	// string filename = "/home/qrstu/yty/dataset/word/signature.txt";
+	string filename = "dataset/word/fft_clu/word_" + to_string(p) + ".txt";
+	// string filename = "dataset/word/signature.txt";
 	ain1.open(filename, ifstream::in);	
 	num=0;
 	string str;
